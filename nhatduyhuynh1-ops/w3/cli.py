@@ -1,12 +1,13 @@
 
 import argparse
 import sys
-from pathlib import Path
 from datetime import date
+from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"w2"))
 
 from io_utils import load_tasks
+
 
 def main():
     parser=argparse.ArgumentParser()

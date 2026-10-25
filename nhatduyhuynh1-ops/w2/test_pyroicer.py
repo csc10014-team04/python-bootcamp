@@ -3,7 +3,7 @@ import pytest
 
 from Pyroicer.w1.grades import summary
 from Pyroicer.w1.rules import can_register_thesis, missing
-from Pyroicer.w1.text_tools import word_count, top_k
+from Pyroicer.w1.text_tools import top_k, word_count
 from Pyroicer.w1.timetable import by_day
 
 
