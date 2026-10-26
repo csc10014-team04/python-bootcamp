@@ -1,3 +1,13 @@
-from .models import Task
-from .io_utils import load_tasks, save_json
+"""Week 2 study planner package initializer."""
+
 from .errors import InfeasiblePlan, check_feasible
+from .io_utils import load_tasks, save_json
+from .models import Task
+
+__all__ = [
+    "InfeasiblePlan",
+    "Task",
+    "check_feasible",
+    "load_tasks",
+    "save_json",
+]
