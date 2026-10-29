@@ -1,0 +1,16 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = [
+    ".git",
+    "25127149",
+    "anhkhoit07",
+    "HarryLearnCoding-86",
+    "nhatduyhuynh1-ops",
+    "PolyNguyenEster",
+    "Pyroicer",
+]
