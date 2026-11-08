@@ -1,12 +1,13 @@
 
 """Capacity allocation and time budget planning."""
 
-from .errors import InfeasiblePlan
 from .models import Task
 
 
 def allocate(tasks: list[Task], hours: float) -> list[Task]:
     """Allocate available hours to prioritised tasks greedily.
+
+    Tasks that do not fit in the remaining time are skipped.
 
     Args:
         tasks: Prioritised candidate tasks.
@@ -17,7 +18,6 @@ def allocate(tasks: list[Task], hours: float) -> list[Task]:
 
     Raises:
         ValueError: If available hours is negative.
-        InfeasiblePlan: If a task cannot fit within the remaining hours.
     """
     if hours < 0:
         raise ValueError("Available hours must be non-negative")
@@ -29,8 +29,5 @@ def allocate(tasks: list[Task], hours: float) -> list[Task]:
         if task.effort_h <= remaining:
             selected.append(task)
             remaining -= task.effort_h
-        else:
-            needed_h = sum(t.effort_h for t in selected) + task.effort_h
-            raise InfeasiblePlan(needed_h, hours)
 
     return selected
